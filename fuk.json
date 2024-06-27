@@ -1,0 +1,931 @@
+{
+  "_comment": "MODEL:FW9500; NMS:VXM; OPR:[BKP,RST,Autonomous ALM,INV,SWUG,FWUG(FVM ALM),LINK(GNEs & SNES)]; Cond:{target_id:[A-Z]{8}-[0-9],nGNE==even-number};",
+  "delim": ";",
+  "argSep": ":",
+  "blockSep": ",",
+  "blockSign": "=",
+  "banner": "",
+  "prompt": "",
+  "doEcho": false,
+  "respENL": false,
+  "valid_card_names": ["IFP5-CMD1,IFP5-EGS1,IFP5-TCA2,IFP5-CXF4,IFP5-S9B1,IFP5-CMS1,IFP5-TGD1,IFP5-CTC1,IFP5-EXX1,IFP5-STA2,IFP5-TMD1"],
+  "autoMsg": true,
+  "authUser": true,
+  "authPasswd": true,
+  "ALL": "ALL",
+  "MAXMEM": 100,
+  "memory": {
+    "ACTIVE": "ACT",
+    "RAM": "RDISK",
+    "STANDBY": "STBY"
+  },
+  "defaultProgress": {
+    "ED-FTP-CLNT": "IS"
+  },
+  "fileSize": 11,
+  "files": {
+    "ACTIVE": ["A", "B", "F95", "1-MPP5-1"],
+    "RAM": [],
+    "STANDBY": ["F95"]
+  },
+  "options": {
+    "{{CLNT_STATE}}": ["OOS", "IS"],
+    "{{OVERWRITE}}": ["N", "Y"]
+  },
+  "MODIFIER":{
+    "valid_card_names": ["IFP5-CMD1,IFP5-EGS1,IFP5-TCA2,IFP5-CXF4,IFP5-S9B1,IFP5-CMS1,IFP5-TGD1,IFP5-CTC1,IFP5-EXX1,IFP5-STA2,IFP5-TMD1"],
+    "aids": {
+         "shelfCards": {
+        "shelf1": [
+          { "aid": "1", "cardName": "US-300" }
+        ],
+        "shelf2": [
+          { "aid": "2", "cardName": "US-300" }
+        ]
+      },
+        "shelfSlotCards": {
+            "shelf1": [
+                {"aid": "1-1"},
+                {"aid": "1-2"},
+                {"aid": "1-3"},
+                {"aid": "1-4"},
+                {"aid": "1-5"},
+                {"aid": "1-6"},
+                {"aid": "1-7"},
+                {"aid": "1-8"},
+                {"aid": "1-9"},
+                {"aid": "1-10"},
+                {"aid": "1-11"},
+                {"aid": "1-12"},
+                {"aid": "1-13"},
+                {"aid": "1-14"},
+                {"aid": "1-15"},
+                {"aid": "1-16"},
+                {"aid": "1-17"},
+                {"aid": "1-18"},
+                {"aid": "1-19"},
+                {"aid": "1-20"},
+                {"aid": "1-21"},
+                {"aid": "1-22"},
+                {"aid": "1-23"},
+                {"aid": "1-24"}
+              ],
+          "shelf2": [
+                {"aid": "2-1"},
+                {"aid": "2-2"},
+                {"aid": "2-3"},
+                {"aid": "2-4"},
+                {"aid": "2-5"},
+                {"aid": "2-6"},
+                {"aid": "2-7"},
+                {"aid": "2-8"},
+                {"aid": "2-9"},
+                {"aid": "2-10"},
+                {"aid": "2-11"},
+                {"aid": "2-12"},
+                {"aid": "2-13"},
+                {"aid": "2-14"},
+                {"aid": "2-15"},
+                {"aid": "2-16"},
+                {"aid": "2-17"},
+                {"aid": "2-18"},
+                {"aid": "2-19"},
+                {"aid": "2-20"},
+                {"aid": "2-21"},
+                {"aid": "2-22"},
+                {"aid": "2-23"},
+                {"aid": "2-24"}
+            ]
+        },
+        "cards": [
+            {"cardName": "IFP5-CMD1", "ports": 8, "portTypes": ["OC3IR1", "OC12IR1"]},
+            {"cardName": "IFP5-EGS1", "ports": 20, "portTypes": ["1GESX"]},
+            {"cardName": "IFP5-TCA2", "ports": 1, "portTypes": []},
+            {"cardName": "IFP5-CXF4", "ports": 14, "portTypes": []},
+            {"cardName": "IFP5-S9B1", "ports": 2, "portTypes": ["OC192SR1"]},
+            {"cardName": "IFP5-CMS1", "ports": 20, "portTypes": ["1GESX"]},
+            {"cardName": "IFP5-TGD1", "ports": 8, "portTypes": []},
+            {"cardName": "IFP5-CTC1", "ports": 4, "portTypes": []},
+            {"cardName": "IFP5-EXX1", "ports": 2, "portTypes": []},
+            {"cardName": "IFP5-STA2", "ports": 0, "portTypes": []},
+            {"cardName": "IFP5-TMD1", "ports": 8, "portTypes": []}
+
+        ],
+      "specialTypes": {
+                "shelf1": [
+                    {"aid": "1-MPP5-1", "cardName": "MPP5-MPE2"},
+                    {"aid": "1-MPP5-2", "cardName": "MPP5-MPE2"},
+                    {"aid": "1-SWP5-1", "cardName": "SWP5-SF52"},
+                    {"aid": "1-SWP5-2", "cardName": "SWP5-SF52"},
+                    {"aid": "1-FAN-1", "cardName": "FAN"},
+                    {"aid": "1-FAN-2", "cardName": "FAN"},
+                    {"aid": "1-FAN-3", "cardName": "FAN"},
+                    {"aid": "1-FAN-4", "cardName": "FAN"}
+                ],
+                "shelf2": [
+                    {"aid": "2-MPP5-1", "cardName": "MPP5-MPE2"},
+                    {"aid": "2-MPP5-2", "cardName": "MPP5-MPE2"},
+                    {"aid": "2-SWP5-1", "cardName": "SWP5-SF52"},
+                    {"aid": "2-SWP5-2", "cardName": "SWP5-SF52"},
+                    {"aid": "2-FAN-1", "cardName": "FAN"},
+                    {"aid": "2-FAN-2", "cardName": "FAN"},
+                    {"aid": "2-FAN-3", "cardName": "FAN"},
+                    {"aid": "2-FAN-4", "cardName": "FAN"}
+                ]
+            }
+        },
+    "attributes": {
+      "SST": ["IS-NR","OOS-MA","OOS-AUMA","AU", "UEQ&ACT", "UAS&UEQ"],
+      "PST": ["FAF","SGEO","AINS","MT"],
+      "vendIdPattern": "FC[0-9]{6}-[0-9]{2}",
+      "cleiPattern": "[A-Z0-9]{10}",
+      "serialNoPattern": "[A-Z0-9]{5}",
+      "usiPattern": "[A-Z0-9]{25}",
+      "domFormat": "yy.mm",
+      "LambdaPattern": "UNSPEC",
+      "TYPEINFO01": "[A-Z0-9]{10}",
+      "voltageRange": ["NEG40V", "NEG57V"],
+      "currentDrawFormat": "xx.xA",
+      "fuseFeedRatings": ["15A", "20A", "25A", "30A", "35A", "40A", "45A", "50A", "55A", "60A", "65A", "70A"],
+      "currentDrawFeed1Pattern": "xx.xA",
+      "currentDrawFeed2Pattern": "xx.xA",
+      "LMBDMIN": "[0-9]{4}\\.[0-9]{2}|<NULL>",
+      "LAMBDMAX": "[0-9]{4}\\.[0-9]{2}|<NULL>",
+      "MAID": "16|48",
+      "MODE" : ["SWFO","SAS"],
+      "card_current_feed": "xx.xA",
+      "OVERTEMP": "[0-9]{1,3}",
+      "FREQGRID": "6\\.25|50\\.0|100\\.0",
+      "FREQMIN": "[0-9]{3}\\.[0-9]{5}|<NULL>",
+      "FREQMAX": "[0-9]{3}\\.[0-9]{5}|<NULL>",
+      "CURRTHR1": "1A…FUSEFEED1–1A / 1A; 0\\.8 x FUSEFEED1",
+      "CURRTHR2": "1A…FUSEFEED1–1A / 1A; 0\\.8 x FUSEFEED1"
+    },
+
+    "AO": {
+      "#CID": {"NUM":"", "MSGTYP": "", "MSG": "", "NCODE": ""},
+      "1-18-C1:CR,LOS": {"NCODE": "A", "NUM": "000256", "MSGTYP": "ALM 10GE", "MSG": "1-18-C1:CR,LOS,SA,,,NEND,RCV:\\\"Loss of Signal\\\",,,"},
+      "380": {
+          "CID": "380",
+          "NCODE": "A",
+          "NUM": "007380",
+          "MSGTYP": "EVT COM",
+          "MSG": ":TARPERR,TC,,,NEND,NA,,,:\\\"TID Unreachable Error\\\",,\\\"NET Address is none\\\",\\\"DTID is SMGRAAAA-0\\\""
+      },
+      "381": {
+          "CID": "381",
+          "NCODE": "A",
+          "NUM": "007381",
+          "MSGTYP": "EVT COM",
+          "MSG": ":TARPERR,TC,,,NEND,NA,,,:\\\"TID Unreachable Error\\\",,\\\"NET Address is none\\\",\\\"DTID is SMGRAAAA-0\\\""
+      },
+      "382": {
+          "CID": "382",
+          "NCODE": "A",
+          "NUM": "007382",
+          "MSGTYP": "EVT COM",
+          "MSG": ":TARPERR,TC,,,NEND,NA,,,:\\\"TID Unreachable Error\\\",,\\\"NET Address is none\\\",\\\"DTID is SMGRAAAA-0\\\""
+      },
+      "383": {
+          "CID": "383",
+          "NCODE": "A",
+          "NUM": "007383",
+          "MSGTYP": "EVT COM",
+          "MSG": ":TARPERR,TC,,,NEND,NA,,,:\\\"TID Unreachable Error\\\",,\\\"NET Address is none\\\",\\\"DTID is SMGRAAAA-0\\\""
+      },
+      "384": {
+          "CID": "384",
+          "NCODE": "A",
+          "NUM": "007380",
+          "MSGTYP": "EVT COM",
+          "MSG": ":TARPERR,TC,,,NEND,NA,,,:\\\"TID Unreachable Error\\\",,\\\"NET Address is none\\\",\\\"DTID is SMGRAAAA-0\\\""
+      },
+      "1-18-C1:CL,LOS": {"NCODE": "A", "NUM": "000263", "MSGTYP": "ALM 10GE", "MSG": "1-18-C1:CL,LOS,SA,,,NEND,RCV:\\\"Loss of Signal\\\",,,"}
+    },
+    "COND-ALL": {
+            "#AID": {"AID": "", "MSG": ""},
+            "1-SWP5-1": {"AID": "1-SWP5-1", "MSG": "1-SWP5-1,EQPT:MN,FVLC,NSA,,,NEND,NA:\\\"Firmware Version Limited Compatibility: TYPE=SWP5-SF52\\\",,,"},
+            "1-SWP5-2": {"AID": "1-SWP5-2", "MSG": "1-SWP5-2,EQPT:MN,FVLC,NSA,,,NEND,NA:\\\"Firmware Version Limited Compatibility: TYPE=SWP5-SF52\\\",,,"},
+            "4-5": {"AID": "4-5", "MSG": "4-5,EQPT:MN,FVLC,NSA,,,NEND,NA:\\\"Firmware Version Limited Compatibility: TYPE=IFP5-CMD1\\\",,,"}
+    },
+    "EQPT": {
+            "#AID": {"AID": "", "TYPE": "", "MSG": "", "PST": "", "SST": ""},
+            "1-5": {"AID": "1-5", "TYPE": "IFP5-SVB1", "MSG": "1-5:IFP5-SVB1:ACTTYPE=IFP5-SVB1,VENDID=FC9565SVB1-01,DOM=14.03,CLEI=WOTRC9MJAA,SERIALNO=00036,USI=LBFJTU01143565SVB10100036,MODE=SWFO,OVERTEMP=100.0,CARDCURRFEED=4.3A:", "PST": "IS-NR", "SST": "ACT"},
+            "4-5": {"AID": "4-5", "TYPE": "IFP5-CMD1", "MSG": "4-5:IFP5-CMD1:ACTTYPE=IFP5-CMD1,VENDID=FC9565SVB1-01,DOM=14.03,CLEI=WOTRC9MJAA,SERIALNO=00036,USI=LBFJTU01143565SVB10100036,MODE=SWFO,OVERTEMP=100.0,CARDCURRFEED=4.3A:", "PST": "IS-NR", "SST": "ACT"},
+            "1-SWP5-1": {"AID": "1-SWP5-1", "TYPE": "SWP5-SF52", "MSG": "1-SWP5-1:SWP5-SF52:ACTTYPE=SWP5-SF52,VENDID=FC9565SF52-03,DOM=20.04,CLEI=WOCUA0VBAC,SERIALNO=02954,USI=LBFJTU01204565SF520302954,OVERTEMP=89.3,CAPACITY_ILF=NONE,CARDCURRFEED=6.1A,TDM_INUSE=0,PKT_INUSE=0,OTN_INUSE=200:", "PST": "IS-NR", "SST": "ACT"},
+            "1-SWP5-2": {"AID": "1-SWP5-2", "TYPE": "SWP5-SF52", "MSG": "1-SWP5-2:SWP5-SF52:ACTTYPE=SWP5-SF52,VENDID=FC9565SF52-03,DOM=20.04,CLEI=WOCUA0VBAC,SERIALNO=02954,USI=LBFJTU01204565SF520302954,OVERTEMP=89.3,CAPACITY_ILF=NONE,CARDCURRFEED=6.1A,TDM_INUSE=0,PKT_INUSE=0,OTN_INUSE=200:", "PST": "IS-NR", "SST": "STBYH"},
+            "1-IFP5-1": {"AID": "1-IFP5-1", "TYPE": "IFP5-VTM1", "MSG": "1-IFP5-1:IFP5-VTM1:ACTTYPE=IFP5-VTM1,VENDID=FC9565SF52-03,DOM=20.04,CLEI=WOCUA0VBAC,SERIALNO=02954,USI=LBFJTU01204565SF520302954,OVERTEMP=89.3,CAPACITY_ILF=NONE,CARDCURRFEED=6.1A,TDM_INUSE=0,PKT_INUSE=0,OTN_INUSE=200:", "PST": "IS-NR", "SST": "ACT"},
+            "1-IFP5-2": {"AID": "1-IFP5-2", "TYPE": "IFP5-VTM1", "MSG": "1-IFP5-2:IFP5-VTM1:ACTTYPE=IFP5-VTM1,VENDID=FC9565SF52-03,DOM=20.04,CLEI=WOCUA0VBAC,SERIALNO=02954,USI=LBFJTU01204565SF520302954,OVERTEMP=89.3,CAPACITY_ILF=NONE,CARDCURRFEED=6.1A,TDM_INUSE=0,PKT_INUSE=0,OTN_INUSE=200:", "PST": "IS-NR", "SST": "STBYH"},
+            "1-FAN-1": {"AID": "1-FAN-1", "TYPE": "FAN", "MSG": "1-FAN-1:FAN:ACTTYPE=FAN,VENDID=FC9565FAN1-03,DOM=11.07,CLEI=WOCUAKGBAB,SERIALNO=16346,USI=LBFJTU03117565FAN10316346,CARDCURRFEED=2.0A:", "PST": "IS-NR", "SST": "ACT"}
+    },
+    "EQPT-PG": {
+            "#AID": {"AID": "", "MSG": ""},
+            "1-SWP5-1&1-SWP5-2": {"AID": "1-SWP5-1", "MSG": "1-SWP5-1,1-SWP5-2::TYPE=1+1"},
+            "1-IFP5-1&1-IFP5-2": {"AID": "1-IFP5-1", "MSG": "1-IFP5-1,1-IFP5-2::TYPE=1+1"}
+    },
+    "FWINFO": {
+            "#AID": {"AID": "", "MSG": ""},
+            "1-SWP5-1": {"AID": "1-SWP5-1", "FWISSUE": "01-01-2", "FWCOMPAT": "01-01-3", "MSG": "FWDLTYPE=000001,VERFLG=0001,EXPFWISSUE=,EXPFWCOMPAT=,EXPISFWCOMPAT=,EXPFWDLTYPE=,EXPVERFLG=,DRVISSUE=09-01-1,UPDTDAT=20-09-29,UPDTTM=14-09-01,UCODE=3113"},
+            "1-SWP5-2": {"AID": "1-SWP5-2", "FWISSUE": "01-01-2", "FWCOMPAT": "01-01-3", "MSG": "FWDLTYPE=000002,VERFLG=0001,EXPFWISSUE=,EXPFWCOMPAT=,EXPISFWCOMPAT=,EXPFWDLTYPE=,EXPVERFLG=,DRVISSUE=09-01-1,UPDTDAT=20-09-29,UPDTTM=14-09-01,UCODE=3113"},
+            "1-IFP5-1": {"AID": "1-IFP5-1", "FWISSUE": "01-01-2", "FWCOMPAT": "01-01-3", "MSG": "FWDLTYPE=000001,VERFLG=0001,EXPFWISSUE=,EXPFWCOMPAT=,EXPISFWCOMPAT=,EXPFWDLTYPE=,EXPVERFLG=,DRVISSUE=09-01-1,UPDTDAT=20-09-29,UPDTTM=14-09-01,UCODE=3113"},
+            "1-IFP5-2": {"AID": "1-IFP5-2", "FWISSUE": "01-01-2", "FWCOMPAT": "01-01-3", "MSG": "FWDLTYPE=000002,VERFLG=0001,EXPFWISSUE=,EXPFWCOMPAT=,EXPISFWCOMPAT=,EXPFWDLTYPE=,EXPVERFLG=,DRVISSUE=09-01-1,UPDTDAT=20-09-29,UPDTTM=14-09-01,UCODE=3113"},
+            "1-5": {"AID": "1-5", "FWISSUE": "01-01-2", "FWCOMPAT": "01-01-3", "MSG": "FWDLTYPE=000002,VERFLG=0001,EXPFWISSUE=02-01-4,EXPFWCOMPAT=02-01-3,EXPISFWCOMPAT=,EXPFWDLTYPE=000002,EXPVERFLG=0001,DRVISSUE=09-05-1,UPDTDAT=19-11-14,UPDTTM=11-23-11,UCODE=8311"},
+            "4-5": {"AID": "4-5", "FWISSUE": "01-01-2", "FWCOMPAT": "01-01-3", "MSG": "FWDLTYPE=000002,VERFLG=0001,EXPFWISSUE=02-01-4,EXPFWCOMPAT=02-01-3,EXPISFWCOMPAT=,EXPFWDLTYPE=000002,EXPVERFLG=0001,DRVISSUE=09-05-1,UPDTDAT=19-11-14,UPDTTM=11-23-11,UCODE=8311"}
+    },
+    "FWCONFIG": {
+            "#AID": {"AID": "", "MSG": ""},
+            "1-SWP5-1": {"AID": "1-SWP5-1", "MSG": "1-SWP5-1::FWISSUE=01-01-2,FWCOMPAT=01-01-3,FWDLTYPE=000001,VERFLG=0001,EXPFWISSUE=,EXPFWCOMPAT=,EXPISFWCOMPAT=,EXPFWDLTYPE=,EXPVERFLG=,DRVISSUE=09-01-1,UPDTDAT=20-09-29,UPDTTM=14-09-01,UCODE=3113"},
+            "1-SWP5-2": {"AID": "1-SWP5-2", "MSG": "1-SWP5-2::FWISSUE=01-01-2,FWCOMPAT=01-01-3,FWDLTYPE=000002,VERFLG=0001,EXPFWISSUE=,EXPFWCOMPAT=,EXPISFWCOMPAT=,EXPFWDLTYPE=,EXPVERFLG=,DRVISSUE=09-01-1,UPDTDAT=20-09-29,UPDTTM=14-09-01,UCODE=3113"},
+            "1-IFP5-1": {"AID": "1-IFP5-1", "MSG": "1-IFP5-1::FWISSUE=01-01-2,FWCOMPAT=01-01-3,FWDLTYPE=000001,VERFLG=0001,EXPFWISSUE=,EXPFWCOMPAT=,EXPISFWCOMPAT=,EXPFWDLTYPE=,EXPVERFLG=,DRVISSUE=09-01-1,UPDTDAT=20-09-29,UPDTTM=14-09-01,UCODE=3113"},
+            "1-IFP5-2": {"AID": "1-IFP5-2", "MSG": "1-IFP5-2::FWISSUE=01-01-2,FWCOMPAT=01-01-3,FWDLTYPE=000002,VERFLG=0001,EXPFWISSUE=,EXPFWCOMPAT=,EXPISFWCOMPAT=,EXPFWDLTYPE=,EXPVERFLG=,DRVISSUE=09-01-1,UPDTDAT=20-09-29,UPDTTM=14-09-01,UCODE=3113"},
+            "1-5": {"AID": "1-5", "MSG": "1-5::FWISSUE=01-01-2,FWCOMPAT=01-01-3,FWDLTYPE=000002,VERFLG=0001,EXPFWISSUE=02-01-4,EXPFWCOMPAT=02-01-3,EXPISFWCOMPAT=,EXPFWDLTYPE=000002,EXPVERFLG=0001,DRVISSUE=09-05-1,UPDTDAT=19-11-14,UPDTTM=11-23-11,UCODE=8311"},
+            "4-5": {"AID": "4-5", "MSG": "4-5::FWISSUE=01-01-2,FWCOMPAT=01-01-3,FWDLTYPE=000002,VERFLG=0001,EXPFWISSUE=02-01-4,EXPFWCOMPAT=02-01-3,EXPISFWCOMPAT=,EXPFWDLTYPE=000002,EXPVERFLG=0001,DRVISSUE=09-05-1,UPDTDAT=19-11-14,UPDTTM=11-23-11,UCODE=8311"}
+    },
+    "VERSION": {
+            "#AID": {"AID": "", "MEMLOC": "", "VER": "", "PARAM1": "", "PARAM2": "", "ACTDAT" :"", "ACTTM": ""},
+            "ACT": {"AID": "ACT", "MEMLOC": "ACT", "VER": "09-01-3", "PARAM1": ",ACTDAT=", "PARAM2": ",ACTTM=", "ACTDAT": "21-10-01", "ACTTM": "13-38-27"},
+            "STBY": {"AID": "STBY", "MEMLOC": "STBY",  "VER": "09-01-3", "PARAM1": "", "PARAM2": "", "ACTDAT" : "", "ACTTM": ""}
+    }
+    },
+  "responseLookup": {
+        "respICNV": "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n   ICNV\n   /*Input, Command Not Valid*/\n;",
+        "respPLNA": "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n   PLNA\n   /*Privilege Login Not Active*/\n;",
+        "respIITA": "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n   IITA\n   /*Input, Invalid Target Identifier*/\n;",
+        "respDENY": "{{resp:onFail}}"
+  },
+  "autonomousMessage": {
+        "repeatTime": 1,
+        "delay": 38,
+        "modifier": "AO",
+        "response": "\n\n   {{TID}} {{date}} {{time}}\n{{NCODE}}  {{NUM}} REPT {{MSGTYP}}\n   \"{{MSG}}\"\n;"
+  },
+  "format": {
+        "date": "%y-%m-%d",
+        "time": "%H:%M:%S"
+  },
+  "commands": {
+        "ACT-USER": {
+            "input": "ACT-USER:{{TID}}:{{USER}}:{{CTAG}}::{{PASSWD}}",
+            "pre": {
+                "({{client}},\"{{USER}}\") not in {{auth}}": "respPLNA"
+            },
+            "denyParallel": {},
+            "responses": {
+                "onPass": [
+                    [0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"]
+                ],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_login"
+        },
+        "CANC-USER": {
+            "input": "CANC-USER:{{TID}}:{{USER}}:{{CTAG}}",
+            "pre": {
+                "({{client}},\"{{USER}}\") in {{auth}}": "respPLNA"
+            },
+            "denyParallel": {},
+            "responses": {
+                "onPass": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_logout"
+        },
+        "RTRV-HDR": {
+            "input": "RTRV-HDR:{{TID}}::{{CTAG}}",
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "responses": {
+                "onPass": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_generic"
+        },
+        "RTRV-COND-ALL": {
+            "input": "RTRV-ALM-ALL:{{TID}}:{{AID}}:{{CTAG}}",
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "responses": {
+                "onPass": [
+                    [0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n{{for :ret:   \"{MSG}\"\\n}};"]
+                ],
+                "onPassEmpty": [[0, "   /*No Match Alarms Found*/\n"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_rtrv_modifier"
+        },
+        "ED-EQPT": {
+            "input": "ED-EQPT:{{TID}}:{{AID}}:{{CTAG}}::::{{PST}}",
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "act": {
+                "cmd['PST'] = 'OOS-MA' if cmd['PST'] == 'OOS' else 'IS-NR'": "onFail"
+            },
+            "responses": {
+                "onPass": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_edit_modifier"
+        },
+        "OPR-PROTNSW-EQPT": {
+            "input": "OPR-PROTNSW-EQPT:{{TID}}:{{AID}}:{{CTAG}}::{{MAN}}",
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "act": {
+                "cmd['AID2'] = cmd['AID'].split('-1')[0] + '-2' if cmd['AID'].endswith('-1') else cmd['AID'].split('-2')[0] + '-1'; EQPT = NECFG[cmd['TID']]['MODIFIER']['EQPT']; EQPT[cmd['AID']]['SST'], EQPT[cmd['AID2']]['SST'] = EQPT[cmd['AID2']]['SST'], EQPT[cmd['AID']]['SST']": "onFail"
+            },
+            "responses": {
+                "onPass": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_generic"
+        },
+        "RTRV-NLP-NBR": {
+          "input": "RTRV-NLP-NBR:{{TID}}:{{AID}}:{{CTAG}}",
+          "pre": {
+            "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+          },
+          "act": {
+            "cmd['NSAP'] = NEDATA[cmd['TID']]['nsap'];": "OnFail"
+          },
+          "responses": {
+            "onPass": [
+              [1, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n   \"::TID={{TID}},NSAP={{NSAP}},SYSTYPE=L1IS\"\n{{for :ret:   \"::CKTID={CKT1},TID={NBTID},NSAP={NBNSAP},SYSTYPE=L1IS\"\\n   \"::CKTID={CKT2},TID={NBTID},NSAP={NBNSAP},SYSTYPE=L1IS\"\\n}}\n;"]
+            ],
+	    "onPassEmpty": [[0, "   /*NBR DTLS Not FOUND*/\n"]],
+            "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+            "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+          },
+          "method": "handle_rtrv_nbr"
+        },
+        "RTRV-NLP-CKT": {
+            "input": "RTRV-NLP-CKT:{{TID}}:{{AID}}:{{CTAG}}",
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "act": {
+               "cmd['NSAP'] = NEDATA[cmd['TID']]['nsap'];": "onFail"
+            },
+            "responses": {
+                "onPass": [
+                    [0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n{{for :ret:   \"{CKT1}:OSC,1-6-E{PORT}:TYPE=PTP,LINKID=000174{LID},TTYPE1=WDM,TAID1=1-6-E{PORT}:IS-NR\"\\n   \"{CKT2}:SDCC,1-3-{PORT}:TYPE=PTP,LINKID=000175{LID},TTYPE1=OC192,TAID1=1-3-{PORT}:IS-NR\"\\n}};"]
+                ],
+		"onPassEmpty": [[0, "   /*NBR DTLS Not FOUND*/\n"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_rtrv_nbr"
+        },
+        "RTRV-OC3": {
+            "input": "RTRV-OC3:{{TID}}:{{AID}}:{{CTAG}}",
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "responses": {
+                "onPass": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_generic"
+        },
+        "RTRV-OC12": {
+            "input": "RTRV-OC3:{{TID}}:{{AID}}:{{CTAG}}",
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "responses": {
+                "onPass": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_generic"
+        },
+        "RTRV-OC48": {
+            "input": "RTRV-OC48:{{TID}}:{{AID}}:{{CTAG}}",
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "responses": {
+                "onPass": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_generic"
+        },
+        "RTRV-OC192": {
+          "input": "RTRV-OC192:{{TID}}:{{AID}}:{{CTAG}}",
+          "pre": {
+              "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+          },
+          "act": {
+            "cmd['NSAP'] = NEDATA[cmd['TID']]['nsap'];": "onFail"
+          },
+          "responses": {
+            "onPass": [
+              [0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n{{for :ret:   \"1-3-{PORT}::VSTIMER=08-00,J0SECTRC=Y,TRCBYTE=64,AUTOTX=N,AUTORX=N,BERSDL=-6,BERSFL=-5,TRC=\\\"{TID}|1-3-{PORT}\\\",EXPTRC=,RECTRC=\\\"{NBTID}|1-3-{PORT}\\\",SYNCMSG=Y,IQL=ST3,OQL=ST3,ACTLASER=NORMAL:IS-NR,ACT\"\\n}};"]
+            ],
+	    "onPassEmpty": [[0, "   /*NBR DTLS Not FOUND*/\n"]],
+            "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"]],
+            "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+          },
+          "method": "handle_rtrv_nbr"
+        },
+        "RTRV-OC768": {
+            "input": "RTRV-OC768:{{TID}}:{{AID}}:{{CTAG}}",
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "responses": {
+                "onPass": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_generic"
+        },
+        "RTRV-OSC": {
+            "input": "RTRV-OSC:{{TID}}:{{AID}}:{{CTAG}}",
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "act": {
+                "cmd['NSAP'] = NEDATA[cmd['TID']]['nsap'];": "onFail"
+            },
+            "responses": {
+                "onPass": [
+                    [0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n{{for :ret:   \"1-6-E{PORT}::VSTIMER=08-00,J0SECTRC=Y,TRC=\\\"{TID}|1-6-E{PORT}\\\",EXPTRC=,RECTRC=\\\"{NBTID}|1-6-E{PORT}\\\":IS-NR,ACT\"\\n}};"]
+                ],
+		"onPassEmpty": [[0, "   /*NBR DTLS Not FOUND*/\n"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_rtrv_nbr"
+        },
+
+    "RTRV-EQPT": {
+      "input": "RTRV-EQPT:{{TID}}:{{AID}}:{{CTAG}}",
+      "pre": {
+        "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+      },
+      "responses": {
+        "onPass": [[0, "{{ret}}\n;"]],
+        "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+        "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+      },
+      "cards_to_insert": "IFP5-CMD1,IFP5-EGS1,IFP5-TCA2,IFP5-CXF4,IFP5-S9B1,IFP5-CMS1,IFP5-TGD1,IFP5-CTC1,IFP5-EXX1,IFP5-STA2,IFP5-TMD1",
+      "no_of_slots": 24,
+      "no_of_shelf": 2,
+      "card_names": {
+        "shelf_1": "IFP5-CMD1,,,,,,,,,,,,,,,,,,,,,,,IFP5-EGS1",
+        "shelf_2": ",,,,,,,,,,,,,,,,,,,,,,,"
+      },
+      "response_header": "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n",
+      "method": "generic_card_logs5"
+    },
+        "RTRV-EQPT-PG": {
+            "input": "RTRV-EQPT-PG:{{TID}}:{{AID}}:{{CTAG}}",
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "responses": {
+                "onPass": [
+                    [0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n{{for :ret:   \"{MSG}\"\\n}};"]
+                ],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_rtrv_modifier"
+        },
+        "RTRV-FWINFO": {
+            "input": "RTRV-FWINFO:{{TID}}:{{AID}}:{{CTAG}}",
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "responses": {
+                "onPass": [
+                    [0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n{{for :ret:   \"{AID}::FWISSUE={FWISSUE},FWCOMPAT={FWCOMPAT},{MSG}\"\\n}};"]
+                ],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_rtrv_modifier"
+        },
+        "RD-FWCONFIG": {
+            "input": "RTRV-FWINFO:{{TID}}:{{AID}}:{{CTAG}}:::{{KWBLOCK}}",
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "responses": [
+                [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n   \"ACT:TYPE={{TYPE}},FWISSUE=01-01-3,FWCOMPAT=01-01-3,ISCOMPAT=,FWDLTYPE=1,VERFLG=0003,UCODE=6211,TYPEUSED=Y,FWPRESENT=Y,PGMNAME=A6200001\"\n   \"ACT:TYPE={{TYPE}},FWISSUE=01-01-3,FWCOMPAT=01-01-3,ISCOMPAT=,FWDLTYPE=2,VERFLG=0003,UCODE=6211,TYPEUSED=Y,FWPRESENT=Y,PGMNAME=A6200001\"\n;"]],
+                [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n   \"ACT:TYPE={{TYPE}},FWISSUE=01-01-3,FWCOMPAT=01-01-3,ISCOMPAT=,FWDLTYPE=1,VERFLG=0003,UCODE=6211,TYPEUSED=Y,FWPRESENT=Y,PGMNAME=A6200001\"\n   \"ACT:TYPE={{TYPE}},FWISSUE=01-01-3,FWCOMPAT=01-01-3,ISCOMPAT=,FWDLTYPE=2,VERFLG=0003,UCODE=6211,TYPEUSED=Y,FWPRESENT=Y,PGMNAME=A6200001\"\n;"]]
+            ],
+            "method": "handle_genric"
+        },
+        "INIT-EQPT": {
+            "input": "INIT-EQPT:{{TID}}:{{AID}}:{{CTAG}}:::{{KWBLOCK}}",
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA",
+                "cmd['FORCE'] == 'Y' or cmd['FORCE'] == 'N'": "onFail"
+            },
+            "act": {
+                "NECFG[cmd['TID']]['MODIFIER']['COND-ALL'].pop(cmd['AID'])": "onFail",
+                "NECFG[cmd['TID']]['MODIFIER']['AO'].pop(cmd['AID'])": "onFail",
+                "cmd['TYPE'] = NECFG[cmd['TID']]['MODIFIER']['EQPT'][cmd['AID']]['TYPE']": "onFail",
+                "NECFG[cmd['TID']]['MODIFIER']['FWINFO'][cmd['AID']]['FWISSUE'] = NECFG[cmd['TID']]['MODIFIER']['FWINFO'][cmd['AID']]['FWCOMPAT']": "onFail"
+            },
+            "DEFAULT": {
+                "{{auto_msg}}": true
+            },
+            "auto_msg": [
+                [5, "\n\n   {{TID}} {{date}} {{time}}\n*  000028 REPT ALM EQPT\n   \"{{AID}}:CL,FVLC,NSA,,,NEND,NA:\\\"Firmware Version Limited Compatibility: TYPE = {{TYPE}}\\\",,,\"\n;"]
+            ],
+
+            "responses": {
+                "onPass": [
+                    [1, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"],
+                    [10, "\n\n   {{TID}} {{date}} {{time}}\nA  000022 REPT EVT EQPT\n   \"{{AID}}:FWIEP,SC,,,NEND,NA,,,:\\\"Firmware INIT-EQPT in Progress: TYPE = {{TYPE}}\\\",,,\"\n;"],
+                    [10, "\n\n   {{TID}} {{date}} {{time}}\nA  000023 REPT EVT EQPT\n   \"{{AID}}:FWACT,TC,,,NEND,NA,,,:\\\"Firmware Activation: TYPE = {{TYPE}}\\\",,,\"\n;"],
+                    [10, "\n\n   {{TID}} {{date}} {{time}}\nA  000024 REPT EVT EQPT\n   \"{{AID}}:FWIEP,CL,,,NEND,NA,,,:\\\"Firmware INIT-EQPT in Progress: TYPE = {{TYPE}}\\\",,,\"\n;"],
+                    [10, "\n\n   {{TID}} {{date}} {{time}}\n*  000025 REPT ALM EQPT\n   \"{{AID}}:MN,SWRESET,NSA,,,NEND,NA:\\\"Software Reset: TYPE = {{TYPE}}\\\",,,\"\n;"],
+                    [10, "\n\n   {{TID}} {{date}} {{time}}\nA  000026 REPT EVT EQPT\n   \"{{AID}}:FWACT,TC,,,NEND,NA,,,:\\\"Firmware Activation Complete: TYPE = {{TYPE}}\\\",,,\"\n;"],
+                    [10, "\n\n   {{TID}} {{date}} {{time}}\n*  000027 REPT ALM EQPT\n   \"{{AID}}:CL,SWRESET,NSA,,,NEND,NA:\\\"Software Reset: TYPE = {{TYPE}}\\\",,,\"\n;"],
+                    [5, "\n\n   {{TID}} {{date}} {{time}}\n*  000028 REPT ALM EQPT\n   \"{{AID}}:CL,FVLC,NSA,,,NEND,NA:\\\"Firmware Version Limited Compatibility: TYPE = {{TYPE}}\\\",,,\"\n;"]
+                ],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n   SNVS\n   /*Status, Not In Valid State. Command Cannot Complete Due To PST Or SST*/\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_generic"
+        },
+        "RTRV-ALM-ALL": {
+            "input": "RTRV-ALM-ALL:{{TID}}:{{AID}}:{{CTAG}}::{{PSBLOCK}}",
+            "PSBLOCK": {
+                "{{NCODE}}": 0,
+                "{{COND}}": 1,
+                "{{SER}}": 2,
+                "{{LOC}}": 3,
+                "{{DIR}}": 4
+            },
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "responses": {
+                "onPass": [
+                    [0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n   \"1-18-C1,10GE:CR,LOS,SA,,,NEND,RCV:\\\"Loss of Signal\\\",,,\"\n;"]
+                ],
+                "onPassEmpty": [[0, "   /*No Match Alarms Found*/\n"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_generic"
+        },
+        "INH-MSG-ALL": {
+            "input": "INH-MSG-ALL:{{TID}}:{{AID}}:{{CTAG}}",
+            "DEFAULT": {
+                "{{autoMsg}}": false
+            },
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "responses": {
+                "onPass": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_automsg"
+        },
+        "ALW-MSG-ALL": {
+            "input": "ALM-MSG-ALL:{{TID}}:{{AID}}:{{CTAG}}",
+            "DEFAULT": {
+                "{{autoMsg}}": true
+            },
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "responses": {
+                "onPass": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_automsg"
+        },
+        "ALW-DBREPT-ALL": {
+            "input": "ALM-DBREPT-ALL:{{TID}}:{{AID}}:{{CTAG}}",
+            "DEFAULT": {
+                "{{autoMsg}}": true
+            },
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "responses": {
+                "onPass": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_automsg"
+        },
+        "CPY-MEM": {
+            "input": "CPY-MEM:{{TID}}:{{PSBLOCK}}:{{CTAG}}::DBS:TIDCHK=Y",
+            "PSBLOCK": {
+                "{{SRC}}": 0,
+                "{{SRC_FILE}}": 1,
+                "{{DST}}": 2,
+                "{{DST_FILE}}": 3
+            },
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA",
+                "{{MEM}}<{{MAXMEM}}": "respDENY"
+            },
+            "act": {
+                "cmd['DST_FILE'] = cmd['SRC_FILE'][:3] if (cmd['DST'] in ['ACT', 'STBY']) and not cmd.get('DST_FILE') else cmd['DST_FILE'];": "onFail"
+            },
+            "denyParallel": {"CPY-MEM": 1},
+            "responses": {
+                "onPass": [
+                   [0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"],
+                   [1, "\n\n   {{TID}} {{date}} {{time}}\nA  40111 REPT EVT FILE\n   \"{{SRC_FILE}}:CPY-MEM-COMPL,TC:\\\"100.0% Complete\\\"\"\n;"]
+                ],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_cpy_mem"
+        },
+        "CPY-FILE": {
+            "input": "CPY-FILE:{{TID}}:{{PSBLOCK}}:{{CTAG}}:::{{KWBLOCK}}",
+            "PSBLOCK": {
+                "{{SRC}}": 0,
+                "{{SRC_FILE}}": 1,
+                "{{DST}}": 2,
+                "{{DST_FILE}}": 3
+            },
+            "DEFAULT": {
+                "{{OVERWRITE}}": "N",
+                "{{PORT}}": 21
+            },
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA",
+                "\"ED-FTP-CLNT\" in {{progress}} and \"IS\" in {{progress}}[\"ED-FTP-CLNT\"]": "respDENY",
+                "(\"{{DST}}\" == \"RDISK\" and {{MEM}}<{{MAXMEM}}) or \"{{DST}}\" != \"RDISK\"": "respDENY"
+            },
+            "denyParallel": {"CPY-FILE": 4},
+            "responses": {
+                "onPass": [
+                   [1, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"],
+                   [1, "\n\n   {{TID}} {{date}} {{time}}\nA  000121 REPT EVT FILE\n   \"{{SRC_FILE}}:CPY-FILE-PRTL,TC:\\\\\"0.0% Complete\\\\\"\"\n;"],
+                   [1, "\n\n   {{TID}} {{date}} {{time}}\nA  000122 REPT EVT FILE\n   \"{{SRC_FILE}}:CPY-FILE-PRTL,TC:\\\\\"10.0% Complete\\\\\"\"\n;"],
+                   [1, "\n\n   {{TID}} {{date}} {{time}}\nA  000123 REPT EVT FILE\n   \"{{SRC_FILE}}:CPY-FILE-PRTL,TC:\\\\\"20.0% Complete\\\\\"\"\n;"],
+                   [1, "\n\n   {{TID}} {{date}} {{time}}\nA  000124 REPT EVT FILE\n   \"{{SRC_FILE}}:CPY-FILE-PRTL,TC:\\\\\"30.0% Complete\\\\\"\"\n;"],
+                   [1, "\n\n   {{TID}} {{date}} {{time}}\nA  000125 REPT EVT FILE\n   \"{{SRC_FILE}}:CPY-FILE-PRTL,TC:\\\\\"40.0% Complete\\\\\"\"\n;"],
+                   [1, "\n\n   {{TID}} {{date}} {{time}}\nA  000126 REPT EVT FILE\n   \"{{SRC_FILE}}:CPY-FILE-PRTL,TC:\\\\\"50.0% Complete\\\\\"\"\n;"],
+                   [1, "\n\n   {{TID}} {{date}} {{time}}\nA  000127 REPT EVT FILE\n   \"{{SRC_FILE}}:CPY-FILE-PRTL,TC:\\\\\"60.0% Complete\\\\\"\"\n;"],
+                   [1, "\n\n   {{TID}} {{date}} {{time}}\nA  000128 REPT EVT FILE\n   \"{{SRC_FILE}}:CPY-FILE-PRTL,TC:\\\\\"70.0% Complete\\\\\"\"\n;"],
+                   [1, "\n\n   {{TID}} {{date}} {{time}}\nA  000129 REPT EVT FILE\n   \"{{SRC_FILE}}:CPY-FILE-PRTL,TC:\\\\\"80.0% Complete\\\\\"\"\n;"],
+                   [1, "\n\n   {{TID}} {{date}} {{time}}\nA  000130 REPT EVT FILE\n   \"{{SRC_FILE}}:CPY-FILE-PRTL,TC:\\\\\"90.0% Complete\\\\\"\"\n;"],
+                   [1, "\n\n   {{TID}} {{date}} {{time}}\nA  000131 REPT EVT FILE\n   \"{{SRC_FILE}}:CPY-FILE-COMPL,TC:\\\\\"100.0% Complete\\\\\"\"\n;"]
+                ],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_cpy_file"
+        },
+        "CPY-SFILE": {
+            "input": "CPY-SFILE:{{TID}}:{{PSBLOCK}}:{{CTAG}}:::{{KWBLOCK}}",
+            "PSBLOCK": {
+                "{{SRC}}": 0,
+                "{{SRC_FILE}}": 1,
+                "{{DST}}": 2,
+                "{{DST_FILE}}": 3
+            },
+            "DEFAULT": {
+                "{{OVERWRITE}}": "N",
+                "{{PORT}}": 22
+            },
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA",
+                "\"ED-SFTP-CLNT\" in {{progress}} and \"IS\" in {{progress}}[\"ED-SFTP-CLNT\"]": "respDENY"
+            },
+            "denyParallel": {"CPY-SFILE": 4},
+            "responses": {
+                "onPass": [
+                    [0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"],
+                    [1, "\n\n   {{TID}} {{date}} {{time}}\nA  000132 REPT EVT FILE\n   \"{{SRC_FILE}}:CPY-FILE-COMPL,TC:\\\\\"100.0% Complete\\\\\"\"\n;"]
+                ],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_cpy_file_sftp"
+        },
+        "COPY-RFILE": {
+            "input": "COPY-RFILE:{{TID}}::{{CTAG}}::{{PSBLOCK}}",
+            "PSBLOCK": {
+                "FILE_TRANSFER": 0,
+                "{{SRC_FILE}}": 1,
+                "{{DST_URI}}": 2,
+                "{{OVERWRITE}}": 3,
+                "FTTD": 4
+            },
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA",
+                "\"CPY-MEM\" not in [x[0] for x in {{active}}] and \"CPY-FILE\" not in [x[0] for x in {{active}}]": "respDENY"
+            },
+            "denyParallel": {"COPY-RFILE": 1},
+            "responses": {
+                "onPass": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"],
+                           [1, "\n\n   {{TID}} {{date}} {{time}}\nA  040131 REPT EVT FILE\n   \"{{SRC_FILE}}:COMPLD,SUCCESS:\\\"COMPLD,SUCCESS\\\"\"\n;"]
+                ],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"],
+                           [1, "\n\n   {{TID}} {{date}} {{time}}\nA  040131 REPT EVT FILE\n   \"{{SRC_FILE}}:COMPLD,FAILURE:\\\"COMPLD,FAILURE\\\"\"\n;"]
+                ],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_copy_file_fttd"
+        },
+        "DLT-FILE": {
+            "input": "DLT-FILE:{{TID}}:{{AID}}:{{CTAG}}",
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "denyParallel": {},
+            "responses": {
+                "onPass": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_dlt_file"
+        },
+        "ED-FTP-CLNT": {
+                "input": "ED-FTP-CLNT:{{TID}}::{{CTAG}}::::{{CLNT_STATE}}",
+                "pre": {
+                        "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+                },
+                "denyParallel": {},
+                "responses": {
+                    "onPass": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"]],
+                    "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                    "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+                },
+                "method": "handle_ed_ftp_client"
+        },
+        "ED-SFTP-CLNT": {
+            "input": "ED-SFTP-CLNT:{{TID}}::{{CTAG}}::::{{CLNT_STATE}}",
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "denyParallel": {},
+            "responses": {
+                "onPass": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_ed_ftp_client"
+        },
+        "OPR-TEF": {
+            "input": "OPR-TEF:{{TID}}::{{CTAG}}::{{PSBLOCK}}",
+            "PSBLOCK": {
+                "{{DTID}}": 0,
+                "SYSID": 1,
+                "DNET": 2,
+                "REQWORKADDR": 3
+            },
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "denyParallel": {},
+            "responses": {
+                "onPass": [
+                    [0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"],
+                    [0, "\n\n   {{TID}} {{date}} {{time}}\nA  000187 REPT EVT COM\n   \":TARPECHO,TC,,,NEND,NA,,,:\\\"TARP Echo Function\\\",,\\\"NET Address is {{ret}}\\\",\\\"DTID is {{DTID}}\\\"\"\n;"]
+                ],
+                "onFail": [
+                    [0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"],
+                    [0, "\n\n   {{TID}} {{date}} {{time}}\nA  000187 REPT EVT COM\n   \":TARPECHO,TC,,,NEND,NA,,,:\\\"TID Unreachable Error\\\",,\\\"NET Address is {{ret}}\\\",\\\"DTID is {{DTID}}\\\"\"\n;"]
+                 ],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_opr_tef"
+        },
+        "RTRV-MEMSTAT-RDISK": {
+            "input": "RTRV-MEMSTAT-RDISK:{{TID}}:{{AID}}:{{CTAG}}",
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "denyParallel": {},
+            "responses": {
+                "onPass": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n   \"::SIZE=88437760,USED=12233728,AVAIL=76204032\"\n;"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_generic"
+        },
+        "RTRV-FILE-RDISK": {
+            "input": "RTRV-FILE-RDISK:{{TID}}:{{AID}}:{{CTAG}}",
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "denyParallel": {},
+            "responses": {
+                "onPass": [[0,"\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n{{for :ret:   \"{FILE}::SIZE={SIZE},CRDAT={CRDAT},CRTIM={CRTM},SIGNATURE=2549C0CD\"\\n}};"]],
+                "onPassEmpty": [[0, "   /*No File on RAM Disk*/\n"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_rtrv_file"
+        },
+        "RTRV-FILE-NVM": {
+            "input": "RTRV-FILE-NVM:{{TID}}:{{AID}}:{{CTAG}}::::{{MEMLOC}}",
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "denyParallel": {},
+            "DEFAULT": {
+                "{{MEMLOC}}": "ALL"
+            },
+            "act": {
+                "NEDATA[cmd['TID']]['data']['version'] = NECFG[cmd['TID']]['MODIFIER']['VERSION'][cmd['MEMLOC']]['VER'];": "onFail"
+            },
+            "responses": {
+                "onPass": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n{{for: ret:   \"1-MPP5-1,{FILE}:PGM:GISSUE=09-03-1,BINISSUE=58-10-F,\"\\n   \"1-MPP5-1,{FILE}:DBS:GISSUE=09-03-1,BINISSUE=58-10-F,\"\\n}};"]],
+                "onPassEmpty": [[0, "   /* No File on NVM*/\n"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_rtrv_file"
+        },
+        "RTRV-TARP-CACHE": {
+            "input": "RTRV-TARP-CACHE:{{TID}}:{{PSBLOCK}}:{{CTAG}}",
+            "PSBLOCK": {
+                "{{DTID}}": 0,
+                "{{DNET}}": 1
+            },
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "denyParallel": {},
+            "responses": {
+                "onPass": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n   \"{{DTID}},{{ret}}\"\n;"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n   /*No DTID and DNET data pair in TARP cache*/\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_get_nsap_addr"
+        },
+        "RTRV-VERSION": {
+            "input": "RTRV-VERSION:{{TID}}:{{AID}}:{{CTAG}}",
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "denyParallel": {},
+            "responses": {
+                "onPass": [
+                    [0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n{{for: ret:   \"{MEMLOC}::GISSUE={VER},GDBISSUE={VER}{PARAM1}{ACTDAT}{PARAM2}{ACTTM}\"\\n}};"]
+                ],
+                "onPassEmpty": [[0, "   /*No File on ACT or STBY*/\n"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_rtrv_modifier"
+        },
+        "INIT-SYS": {
+            "input": "INIT-SYS:{{TID}}::{{CTAG}}:::{{KWBLOCK}}",
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "act": {
+                "CVER = NECFG[cmd['TID']]['MODIFIER']['VERSION']['ACT']['VER'];CVER = cmd.get('GISSUE', CVER);": "onFail"
+            },
+            "denyParallel": {},
+            "responses": {
+                "onPass": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"]],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_init_sys"
+        },
+        "CANC-VALTM": {
+            "input": "CANC-VALTM:{{TID}}::{{CTAG}}:::{{KWBLOCK}}",
+            "KWBLOCK": {
+                "{{ACCEPT}}": 0
+            },
+            "pre": {
+                "{{client}} in {{progress}}[\"ACT-USER\"]": "respPLNA"
+            },
+            "denyParallel": {},
+            "responses": {
+                "onPass": [
+                    [0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} COMPLD\n;"],
+                    [1, "\n\n   {{TID}} {{date}} {{time}}\nA  000024 REPT EVT COM\n   \":DBLOCK,CL,,,NEND,NA,,,:\\\"Database System Locked: Database Restore In Progress\\\",,,\"\n;"],
+                    [1, "\n\n   {{TID}} {{date}} {{time}}\nA  000024 REPT EVT COM\n   \":CANC-VALTM-COMPL,TC,,,NEND,NA,,,:\\\"CANC-VALTM Complete\\\",,,\"\n;"]
+                ],
+                "onFail": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]],
+                "onBusy": [[0, "\n\n   {{TID}} {{date}} {{time}}\nM  {{CTAG}} DENY\n;"]]
+            },
+            "method": "handle_canc_valtm"
+        }
+    }
+}
