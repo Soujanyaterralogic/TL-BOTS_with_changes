@@ -2977,10 +2977,10 @@ class Actions(TelnetHandler, object):
             card_attributes = {
                 "IFP5-CMD1": ["CARDCURRFEED"],
                 "IFP5-EGS1": ["MAID", "AVAILBW", "CARDCURRFEED"],
-                "IFP5-CXF4": ["MODE"],
-                "IFP5-TCA2": ["OVERTEMP", "FREQMIN", "FREQMAX", "FREQGRID", "LMBDMIN", "LMBDMAX", "LMBDGRID"],
-                "IFP5-STA2": ["FREQMIN", "FREQMAX", "FREQGRID", "LMBDMIN", "LMBDMAX", "LMBDGRID"],
-                "IFP5-S9B1": [],
+                "IFP5-CXF4": ["MODE","CARDCURRFEED"],
+                "IFP5-TCA2": ["OVERTEMP", "FREQMIN", "FREQMAX", "FREQGRID", "LMBDMIN", "LMBDMAX", "LMBDGRID","CARDCURRFEED"],
+                "IFP5-STA2": ["FREQMIN", "FREQMAX", "FREQGRID", "LMBDMIN", "LMBDMAX", "LMBDGRID","CARDCURRFEED"],
+                "IFP5-S9B1": ["CARDCURRFEED"],
                 "IFP5-CMS1": ["MODE"],
                 "IFPS-CTC1": ["MODE", "OVERTEMP"]
             }
@@ -3007,12 +3007,12 @@ class Actions(TelnetHandler, object):
                 return pattern
 
             def generate_serial_number():
-                from string import digits, ascii_uppercase
-                characters = ascii_uppercase + digits
-                serial_number = ''.join(random.choice(characters) for _ in range(5))
+                from string import digits
+                # Generate a serial number with only digits, 5 digits long
+                serial_number = ''.join(random.choice(digits) for _ in range(5))
                 return serial_number
 
-            def fetch_attribute_value(attribute_name):
+            def fetch_attribute_value(card_name,attribute_name):
                 if attribute_name == "OVERTEMP":
                     return str(random.randint(0, 150))
                 elif attribute_name in ["FREQMIN", "FREQMAX"]:
@@ -3024,7 +3024,10 @@ class Actions(TelnetHandler, object):
                 elif attribute_name == "MAID":
                     return random.choice(["16", "48"])
                 elif attribute_name == "MODE":
-                    return random.choice(["SWFO", "SAS"])
+                    if card_name == "IFP5-CXF4":
+                        return "SWFS-40G-2+12"
+                    else:
+                        return random.choice(["SWFO", "SAS"])
                 elif attribute_name == "CARDCURRFEED":
                     return "{:.1f}A".format(random.uniform(0.1, 70.0))
                 return "Unknown"
@@ -3052,7 +3055,8 @@ class Actions(TelnetHandler, object):
                     logs.append(shelf_card_log)
 
                 card_names_str = cmd_config.get('card_names').get('shelf_{}'.format(shelf_number), "")
-                card_names = [name if name else None for name in card_names_str.split(',')]
+                #card_names = [name if name else None for name in card_names_str.split(',')]
+                card_names = [name.strip() if name.strip() else None for name in card_names_str.split(',')]
                 slots_to_fill = int(cmd_config.get('no_of_slots', 24))
                 total_slots = 24  # Ensure that each shelf always has 24 slots printed
 
@@ -3077,9 +3081,6 @@ class Actions(TelnetHandler, object):
                     clei = random_value(attributes['cleiPattern'])
                     serial_no = generate_serial_number()
                     usi = random_value(attributes['usiPattern'])
-                    voltage = random.choice(attributes['voltageRange'])
-                    current_draw = generate_current_draw(attributes['currentDrawFormat'])
-                    fuse_feed = random.choice(attributes['fuseFeedRatings'])
                     overtemp = generate_overtemp()
                     maid = random.choice(attributes['MAID'])
 
@@ -3091,18 +3092,21 @@ class Actions(TelnetHandler, object):
                     else:
                         extra_fields = ""
                         for attr in card_attributes.get(card_name, []):
-                            value = fetch_attribute_value(attr)
-                            extra_fields += ", {}={}".format(attr, value)
+                            value = fetch_attribute_value(card_name,attr)
+                            extra_fields += ",{}={}".format(attr, value)
 
-                        card_log = '"{aid}:{card_name}:ACTTYPE={card_name},VENDID={vend_id},DOM={dom},CLEI={clei},SERIALNO={serial_no},USI={usi},VOLTAGE={voltage},CURRENTDRAW={current_draw},FUSEFEED={fuse_feed}{extra}:IS-NR,ACT"'.format(
+                        card_log = '"{aid}:{card_name}:ACTTYPE={card_name},VENDID={vend_id},DOM={dom},CLEI={clei},SERIALNO={serial_no},USI={usi}{extra}:IS-NR,ACT"'.format(
                             aid=aid, card_name=card_info['cardName'], vend_id=vend_id, dom=dom, clei=clei,
-                            serial_no=serial_no, usi=usi, voltage=voltage, current_draw=current_draw,
-                            fuse_feed=fuse_feed,
+                            serial_no=serial_no, usi=usi,
                             extra=extra_fields)
 
                     logs.append(card_log)
 
                     for port_index in range(1, card_info['ports'] + 1):
+                        serial_no = generate_serial_number()
+                        clei = random_value(attributes['cleiPattern'])
+                        usi = random_value(attributes['usiPattern'])
+                        vend_id = random_vendid()
                         port_aid = "{}-{}".format(aid, port_index)
                         if card_name == "IFP5-CMD1" and port_index == 1:
                             port_type = "OC3IR1"
@@ -3144,9 +3148,15 @@ class Actions(TelnetHandler, object):
                                     usi=usi,
                                     status=status)
                             elif 2 <= port_index <= 14:
-                                status = "OOS-AUMA,UAS&UEQ"
-                                port_log = '"{port_aid}::ACTTYPE=,TYPEINFO01=,COMPLTYPE=,VENDID=,DOM=,CLEI=,SERIALNO=,USI=,LAMBDA=,LAMBDAINFO=:{status}"'.format(
-                                    port_aid=port_aid, status=status)
+                                if port_index == 13:
+                                    status = "OOS-MA,UAS"
+                                    port_log = '"{port_aid}::ACTTYPE=,TYPEINFO01=,COMPLTYPE=,VENDID={vend_id},DOM={dom},CLEI={clei},SERIALNO={serial_no},USI={usi},LAMBDA=,LAMBDAINFO=UNKNOWN:{status}"'.format(
+                                        port_aid=port_aid, vend_id=vend_id, dom=dom, clei=clei, serial_no=serial_no,
+                                        usi=usi, status=status)
+                                else:
+                                    status = "OOS-AUMA,UAS&UEQ"
+                                    port_log = '"{port_aid}::ACTTYPE=,TYPEINFO01=,COMPLTYPE=,VENDID=,DOM=,CLEI=,SERIALNO=,USI=,LAMBDA=,LAMBDAINFO=:{status}"'.format(
+                                        port_aid=port_aid, status=status)
 
                         elif card_name == "IFP5-TCA2":
                             if port_index == 1:
@@ -3214,7 +3224,6 @@ class Actions(TelnetHandler, object):
                                 status = "OOS-AUMA,UAS&UEQ"
                                 port_log = '"{port_aid}::ACTTYPE=,TYPEINFO01=,COMPLTYPE=,VENDID=,DOM=,CLEI=,SERIALNO=,USI=,LAMBDA=:{status}"'.format(
                                     port_aid=port_aid, status=status)
-
                         else:
                             status = "IS-NR,ACT"
                             port_log = '"{port_aid}:{port_type}:ACTTYPE={port_type},TYPEINFO01={port_type},COMPLTYPE={port_type},VENDID={vend_id},DOM={dom},CLEI={clei},SERIALNO={serial_no},USI={usi},LAMBDA=UNSPEC,LAMBDAINFO=1310:{status}"'.format(
@@ -3251,20 +3260,27 @@ class Actions(TelnetHandler, object):
                             usi=usi, overtemp=overtemp, card_curr_feed=card_curr_feed, status=status)
                     elif card_name == "MPP5-MPE2" and aid.endswith("2"):
                         status = "OOS-AU,UEQ&STBYH"
-                        special_log = '"{aid}:{card_name}:ACTTYPE=,VENDID=,DOM=,CLEI=,SERIALNO=,USI=,OVERTEMP={overtemp},CARDCURRFEED={card_curr_feed}:{status}"'.format(
-                            aid=aid, card_name=card_name, overtemp=overtemp,card_curr_feed=card_curr_feed, status=status)
+                        special_log = '"{aid}:{card_name}:ACTTYPE=,VENDID=,DOM=,CLEI=,SERIALNO=,USI=,OVERTEMP=-99.9,CARDCURRFEED={card_curr_feed}:{status}"'.format(
+                            aid=aid, card_name=card_name, card_curr_feed=card_curr_feed, status=status)
 
-                    else:
-                        special_log = '"{aid}:{card_name}:ACTTYPE={card_name},VENDID={vend_id},DOM={dom},CLEI={clei},SERIALNO={serial_no},USI={usi},OVERTEMP={overtemp},CARDCURRFEED={card_curr_feed}:IS-NR,ACT"'.format(
+                    elif card_name == "SWP5-SF52" and aid.endswith("1"):
+                        status = "IS-NR,ACT"
+                        special_log = '"{aid}:{card_name}:ACTTYPE={card_name},VENDID={vend_id},DOM={dom},CLEI={clei},SERIALNO={serial_no},USI={usi},OVERTEMP={overtemp},CAPACITY_ILF=NONE,CARDCURRFEED={card_curr_feed},TDM_INUSE=160,PKT_INUSE=50,OTN_INUSE=65:{status}"'.format(
                             aid=aid, card_name=card_name, vend_id=vend_id, dom=dom, clei=clei, serial_no=serial_no,
-                            usi=usi, overtemp=overtemp, card_curr_feed=card_curr_feed)
-
+                            usi=usi, overtemp=overtemp, card_curr_feed=card_curr_feed, status=status)
+                    elif card_name == "SWP5-SF52" and aid.endswith("2"):
+                        status = "OOS-AU,UEQ&STBYH"
+                        special_log = '"{aid}:{card_name}:ACTTYPE=,VENDID=,DOM=,CLEI=,SERIALNO=,USI=,OVERTEMP=-99.9,CAPACITY_ILF=NONE,CARDCURRFEED={card_curr_feed},TDM_INUSE=160,PKT_INUSE=50,OTN_INUSE=65:{status}"'.format(
+                            aid=aid, card_name=card_name, card_curr_feed=card_curr_feed, status=status)
+                    else:
+                        special_log = '"{aid}:{card_name}:ACTTYPE={card_name},VENDID={vend_id},DOM={dom},CLEI={clei},SERIALNO={serial_no},USI={usi},CARDCURRFEED={card_curr_feed}:IS-NR,ACT"'.format(
+                            aid=aid, card_name=card_name, vend_id=vend_id, dom=dom, clei=clei, serial_no=serial_no,
+                            usi=usi, card_curr_feed=card_curr_feed)
                     logs.append(special_log)
 
             full_log = "\n".join("   " + log for log in logs)
             chunks = []
             chunk_size = 4000
-
             while len(full_log) > chunk_size:
                 last_newline = full_log.rfind('\n', 0, chunk_size)
                 if last_newline == -1:
@@ -3274,8 +3290,7 @@ class Actions(TelnetHandler, object):
             if full_log:
                 chunks.append(full_log)
 
-            return True, "\n\n>\n".join(chunks)
-
+            return True, "\n\n>".join(chunks)
 
         except KeyError as e:
             return False, "Configuration error: missing key %s" % e
