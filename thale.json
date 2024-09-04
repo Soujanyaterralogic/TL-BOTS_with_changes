@@ -1,0 +1,376 @@
+{
+  "TID": {
+    "card_attributes": {
+      "IFP5-CMD1": ["CARDCURRFEED"],
+      "IFP5-EGS1": ["MAID", "AVAILBW", "CARDCURRFEED"],
+      "IFP5-CXF4": ["MODE", "CARDCURRFEED"],
+      "IFP5-TCA2": ["OVERTEMP", "FREQMIN", "FREQMAX", "FREQGRID", "LMBDMIN", "LMBDMAX", "LMBDGRID", "CARDCURRFEED"],
+      "IFP5-STA2": ["FREQMIN", "FREQMAX", "FREQGRID", "LMBDMIN", "LMBDMAX", "LMBDGRID", "CARDCURRFEED"],
+      "IFP5-S9B1": ["CARDCURRFEED"],
+      "IFP5-CMS1": ["MODE"],
+      "IFP5-CTC1": ["MODE", "OVERTEMP"],
+      "IFP5-TMD1": ["MODE", "FREQMIN", "FREQMAX", "FREQGRID", "LMBDMIN", "LAMDMAX", "LAMBDAGRID", "CARDCURRFEED"],
+      "PEP5-PEA2": ["MODE", "SMODE", "MAID"]
+    },
+    "aids": {
+      "shelfCards": {
+        "shelf1": [
+          {
+            "aid": "1",
+            "cardName": "US-300"
+          }
+        ],
+        "shelf2": [
+          {
+            "aid": "2",
+            "cardName": "US-300"
+          }
+        ]
+      },
+      "shelfSlotCards": {
+        "shelf1": [
+          {
+            "aid": "1-1"
+          },
+          {
+            "aid": "1-2"
+          },
+          {
+            "aid": "1-3"
+          },
+          {
+            "aid": "1-4"
+          },
+          {
+            "aid": "1-5"
+          },
+          {
+            "aid": "1-6"
+          },
+          {
+            "aid": "1-7"
+          },
+          {
+            "aid": "1-8"
+          },
+          {
+            "aid": "1-9"
+          },
+          {
+            "aid": "1-10"
+          },
+          {
+            "aid": "1-11"
+          },
+          {
+            "aid": "1-12"
+          },
+          {
+            "aid": "1-13"
+          },
+          {
+            "aid": "1-14"
+          },
+          {
+            "aid": "1-15"
+          },
+          {
+            "aid": "1-16"
+          },
+          {
+            "aid": "1-17"
+          },
+          {
+            "aid": "1-18"
+          },
+          {
+            "aid": "1-19"
+          },
+          {
+            "aid": "1-20"
+          },
+          {
+            "aid": "1-21"
+          },
+          {
+            "aid": "1-22"
+          },
+          {
+            "aid": "1-23"
+          },
+          {
+            "aid": "1-24"
+          }
+        ],
+        "shelf2": [
+          {
+            "aid": "2-1"
+          },
+          {
+            "aid": "2-2"
+          },
+          {
+            "aid": "2-3"
+          },
+          {
+            "aid": "2-4"
+          },
+          {
+            "aid": "2-5"
+          },
+          {
+            "aid": "2-6"
+          },
+          {
+            "aid": "2-7"
+          },
+          {
+            "aid": "2-8"
+          },
+          {
+            "aid": "2-9"
+          },
+          {
+            "aid": "2-10"
+          },
+          {
+            "aid": "2-11"
+          },
+          {
+            "aid": "2-12"
+          },
+          {
+            "aid": "2-13"
+          },
+          {
+            "aid": "2-14"
+          },
+          {
+            "aid": "2-15"
+          },
+          {
+            "aid": "2-16"
+          },
+          {
+            "aid": "2-17"
+          },
+          {
+            "aid": "2-18"
+          },
+          {
+            "aid": "2-19"
+          },
+          {
+            "aid": "2-20"
+          },
+          {
+            "aid": "2-21"
+          },
+          {
+            "aid": "2-22"
+          },
+          {
+            "aid": "2-23"
+          },
+          {
+            "aid": "2-24"
+          }
+        ]
+      },
+      "cards": [
+        {
+          "cardName": "IFP5-CMD1",
+          "ports": 8,
+          "portTypes": [
+            "OC3IR1",
+            "OC12IR1"
+          ]
+        },
+        {
+          "cardName": "IFP5-EGS1",
+          "ports": 20,
+          "portTypes": [
+            "1GESX"
+          ]
+        },
+        {
+          "cardName": "IFP5-TCA2",
+          "ports": 1,
+          "portTypes": []
+        },
+        {
+          "cardName": "IFP5-CXF4",
+          "ports": 14,
+          "portTypes": []
+        },
+        {
+          "cardName": "IFP5-S9B1",
+          "ports": 2,
+          "portTypes": [
+            "OC192SR1"
+          ]
+        },
+        {
+          "cardName": "IFP5-CMS1",
+          "ports": 20,
+          "portTypes": [
+            "1GESX"
+          ]
+        },
+        {
+          "cardName": "IFP5-TGD1",
+          "ports": 8,
+          "portTypes": []
+        },
+        {
+          "cardName": "IFP5-CTC1",
+          "ports": 4,
+          "portTypes": []
+        },
+        {
+          "cardName": "IFP5-EXX1",
+          "ports": 2,
+          "portTypes": []
+        },
+        {
+          "cardName": "IFP5-STA2",
+          "ports": 0,
+          "portTypes": []
+        },
+        {
+          "cardName": "IFP5-TMD1",
+          "ports": 8,
+          "portTypes": []
+        }
+      ],
+      "specialTypes": {
+        "shelf1": [
+          {
+            "aid": "1-MPP5-1",
+            "cardName": "MPP5-MPE2"
+          },
+          {
+            "aid": "1-MPP5-2",
+            "cardName": "MPP5-MPE2"
+          },
+          {
+            "aid": "1-SWP5-1",
+            "cardName": "SWP5-SF52"
+          },
+          {
+            "aid": "1-SWP5-2",
+            "cardName": "SWP5-SF52"
+          },
+          {
+            "aid": "1-FAN-1",
+            "cardName": "FAN"
+          },
+          {
+            "aid": "1-FAN-2",
+            "cardName": "FAN"
+          },
+          {
+            "aid": "1-FAN-3",
+            "cardName": "FAN"
+          },
+          {
+            "aid": "1-FAN-4",
+            "cardName": "FAN"
+          }
+        ],
+        "shelf2": [
+          {
+            "aid": "2-MPP5-1",
+            "cardName": "MPP5-MPE2"
+          },
+          {
+            "aid": "2-MPP5-2",
+            "cardName": "MPP5-MPE2"
+          },
+          {
+            "aid": "2-SWP5-1",
+            "cardName": "SWP5-SF52"
+          },
+          {
+            "aid": "2-SWP5-2",
+            "cardName": "SWP5-SF52"
+          },
+          {
+            "aid": "2-FAN-1",
+            "cardName": "FAN"
+          },
+          {
+            "aid": "2-FAN-2",
+            "cardName": "FAN"
+          },
+          {
+            "aid": "2-FAN-3",
+            "cardName": "FAN"
+          },
+          {
+            "aid": "2-FAN-4",
+            "cardName": "FAN"
+          }
+        ]
+      }
+    },
+    "attributes": {
+      "SST": [
+        "IS-NR",
+        "OOS-MA",
+        "OOS-AUMA",
+        "AU",
+        "UEQ&ACT",
+        "UAS&UEQ"
+      ],
+      "PST": [
+        "FAF",
+        "SGEO",
+        "AINS",
+        "MT"
+      ],
+      "vendIdPattern": "FC[0-9]{6}-[0-9]{2}",
+      "cleiPattern": "[A-Z0-9]{10}",
+      "serialNoPattern": "[A-Z0-9]{5}",
+      "usiPattern": "[A-Z0-9]{25}",
+      "domFormat": "yy.mm",
+      "LambdaPattern": "UNSPEC",
+      "TYPEINFO01": "[A-Z0-9]{10}",
+      "voltageRange": [
+        "NEG40V",
+        "NEG57V"
+      ],
+      "currentDrawFormat": "xx.xA",
+      "fuseFeedRatings": [
+        "15A",
+        "20A",
+        "25A",
+        "30A",
+        "35A",
+        "40A",
+        "45A",
+        "50A",
+        "55A",
+        "60A",
+        "65A",
+        "70A"
+      ],
+      "currentDrawFeed1Pattern": "xx.xA",
+      "currentDrawFeed2Pattern": "xx.xA",
+      "LMBDMIN": "[0-9]{4}\\.[0-9]{2}|<NULL>",
+      "LAMBDMAX": "[0-9]{4}\\.[0-9]{2}|<NULL>",
+      "MAID": "16|48",
+      "MODE": [
+        "SWFO",
+        "SAS"
+      ],
+      "card_current_feed": "xx.xA",
+      "OVERTEMP": "[0-9]{1,3}",
+      "FREQGRID": "6\\.25|50\\.0|100\\.0",
+      "FREQMIN": "[0-9]{3}\\.[0-9]{5}|<NULL>",
+      "FREQMAX": "[0-9]{3}\\.[0-9]{5}|<NULL>",
+      "CURRTHR1": "1A…FUSEFEED1–1A / 1A; 0\\.8 x FUSEFEED1",
+      "CURRTHR2": "1A…FUSEFEED1–1A / 1A; 0\\.8 x FUSEFEED1"
+    }
+  }
+}
